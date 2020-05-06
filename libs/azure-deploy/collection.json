@@ -6,7 +6,8 @@
     "azureDeploy": {
       "factory": "./src/schematics/azure-deploy/schematic",
       "schema": "./src/schematics/azure-deploy/schema.json",
-      "description": "azure-deploy schematic"
+      "description": "azure-deploy schematic",
+      "aliases": ["install"]
     }
   }
 }
