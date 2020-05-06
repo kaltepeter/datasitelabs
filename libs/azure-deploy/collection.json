@@ -1,0 +1,12 @@
+{
+  "$schema": "../../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "name": "azure-deploy",
+  "version": "0.0.1",
+  "schematics": {
+    "azureDeploy": {
+      "factory": "./src/schematics/azure-deploy/schematic",
+      "schema": "./src/schematics/azure-deploy/schema.json",
+      "description": "azure-deploy schematic"
+    }
+  }
+}
