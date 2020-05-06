@@ -23,7 +23,8 @@
     "update": "nx migrate latest",
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "build:schema": "node tools/schematics/json-schema-to-ts.js"
   },
   "private": true,
   "dependencies": {
