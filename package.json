@@ -34,6 +34,7 @@
     "@nrwl/jest": "9.2.4",
     "@nrwl/nx-plugin": "^9.2.4",
     "@nrwl/workspace": "9.2.4",
+    "@types/azure": "^0.9.20",
     "@types/dotenv": "^8.2.0",
     "@types/jest": "25.1.4",
     "@types/node": "~8.9.4",
