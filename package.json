@@ -28,9 +28,16 @@
   },
   "private": true,
   "dependencies": {
-    "@azure/storage-blob": "^12.1.1"
+    "@azure/abort-controller": "^1.0.1",
+    "@azure/storage-blob": "^12.1.1",
+    "mime-types": "^2.1.27",
+    "progress": "^2.0.3",
+    "rxjs": "^6.5.5"
   },
   "devDependencies": {
+    "@angular-devkit/build-ng-packagr": "^0.901.4",
+    "@angular/compiler": "^9.1.4",
+    "@angular/compiler-cli": "^9.1.4",
     "@nrwl/eslint-plugin-nx": "9.2.4",
     "@nrwl/jest": "9.2.4",
     "@nrwl/nx-plugin": "^9.2.4",
@@ -38,7 +45,9 @@
     "@types/azure": "^0.9.20",
     "@types/dotenv": "^8.2.0",
     "@types/jest": "25.1.4",
-    "@types/node": "~8.9.4",
+    "@types/mime-types": "^2.1.0",
+    "@types/node": "^8.9.5",
+    "@types/progress": "^2.0.3",
     "@typescript-eslint/eslint-plugin": "2.19.2",
     "@typescript-eslint/parser": "2.19.2",
     "dotenv": "^6.2.0",
@@ -46,6 +55,8 @@
     "eslint-config-prettier": "6.0.0",
     "jest": "25.2.3",
     "json-schema-to-typescript": "^9.0.1",
+    "memfs": "^3.1.2",
+    "ng-packagr": "^9.1.3",
     "prettier": "1.19.1",
     "ts-jest": "25.2.1",
     "ts-node": "^7.0.1",

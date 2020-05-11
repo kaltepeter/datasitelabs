@@ -1,9 +1,19 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema",
   "$id": "https://json-schema.org/draft-07/schema",
-  "title": "AzureDeploy builder",
+  "title": "AzureDeployBuilderSchema",
   "description": "",
   "type": "object",
-  "properties": {},
+  "properties": {
+    "containerName": {
+      "type": "string",
+      "description": "Azure container name?"
+    },
+    "deployDir": {
+      "type": "string",
+      "description": "Directory of deployable code"
+    }
+  },
+  "additionalProperties": true,
   "required": []
 }
