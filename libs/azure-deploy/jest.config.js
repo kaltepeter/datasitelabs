@@ -6,6 +6,5 @@ module.exports = {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'html', 'json'],
   coverageDirectory: '../../coverage/libs/azure-deploy',
-  setupFiles: ["dotenv/config"],
   testEnvironment: 'node'
 };

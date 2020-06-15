@@ -23,6 +23,7 @@ describe('Command Runner Builder', () => {
   let appTree: Tree;
 
   beforeEach(async () => {
+    // TODO: mock azure
     vol.fromJSON(
       {
         './README.md': 'hello',

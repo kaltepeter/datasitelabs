@@ -21,11 +21,9 @@ import { NodeJsSyncHost } from '@angular-devkit/core/node';
 import { getDeployDir } from '../utils/workspace';
 import { async } from 'rxjs/internal/scheduler/async';
 
-const result = dotenv.config();
-
-if (result.error) {
-  throw result.error;
-}
+try {
+  require('dotenv').config();
+} catch (e) {}
 
 const getFiles = (context: BuilderContext, filesPath: string) => {
   return glob.sync(`**`, {
@@ -79,7 +77,7 @@ export function runBuilder(
     }
 
     const files = await getFiles(context, localFilePath);
-    console.log(context, localFilePath, files)
+    console.log(context, localFilePath, files);
     if (files.length === 0) {
       throw new Error(
         'Target did not produce any files, or the path is incorrect.'
