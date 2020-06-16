@@ -49,7 +49,7 @@ export function runBuilder(
       STORAGE_CONNECTION_STRING
     );
 
-    const localFilePath = getDeployDir(context, options);
+    const localFilePath = await getDeployDir(context, options);
     context.logger.info(`Uploading files in: ${localFilePath}`);
 
     let i = 1;

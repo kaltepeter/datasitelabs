@@ -10,6 +10,8 @@ export async function getProjectRoot(context: BuilderContext): Promise<string> {
   return join(normalize(context.workspaceRoot), projectMetadata.root as string);
 }
 
-export function getDeployDir(context: BuilderContext, options: AzureDeployBuilderSchema) {
-  return join(normalize(context.workspaceRoot), options.deployDir);
+export async function getDeployDir(context: BuilderContext, options: AzureDeployBuilderSchema) {
+  const projectMeta = await context.getProjectMetadata(context.target.project);
+  const rootDir = projectMeta.root as string;
+  return options.deployDir ? join(normalize(context.workspaceRoot), options.deployDir) : join(normalize(context.workspaceRoot), 'dist', normalize(rootDir));
 }
