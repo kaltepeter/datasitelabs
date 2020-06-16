@@ -16,7 +16,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ka/azure-deploy": ["libs/azure-deploy/src/index.ts"]
+      "@datasitelabs/azure-deploy": ["libs/azure-deploy/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

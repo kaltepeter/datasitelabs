@@ -78,7 +78,7 @@ export default function(options: AzureDeploySchematicSchema): Rule {
         })
         .targets.add({
           name: 'build',
-          builder: '@ka/azure-deploy:build'
+          builder: '@datasitelabs/azure-deploy:build'
         });
     }),
     addProjectToNxJsonInTree(normalizedOptions.projectName, {

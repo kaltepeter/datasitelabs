@@ -1,5 +1,5 @@
 {
-  "npmScope": "ka",
+  "npmScope": "datasitelabs",
   "implicitDependencies": {
     "workspace.json": "*",
     "package.json": {

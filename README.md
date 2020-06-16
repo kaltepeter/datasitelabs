@@ -15,6 +15,6 @@ npm link
 In test repo:
 
 ```bash
-npm link @ka/azure-deploy
+npm link @datasitelabs/azure-deploy
 ng deploy appName
 ```

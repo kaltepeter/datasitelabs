@@ -65,7 +65,7 @@
           "builder": "@nrwl/nx-plugin:e2e",
           "options": {
             "target": "azure-deploy:build",
-            "npmPackageName": "@ka/azure-deploy",
+            "npmPackageName": "@datasitelabs/azure-deploy",
             "pluginOutputPath": "dist/libs/azure-deploy",
             "jestConfig": "apps/azure-deploy-e2e/jest.config.js",
             "tsSpecConfig": "apps/azure-deploy-e2e/tsconfig.spec.json"

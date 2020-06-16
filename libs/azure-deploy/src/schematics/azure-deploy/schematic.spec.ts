@@ -10,7 +10,7 @@ describe('azure-deploy schematic', () => {
   const options: AzureDeploySchematicSchema = { name: 'test' };
 
   const testRunner = new SchematicTestRunner(
-    '@ka/azure-deploy',
+    '@datasitelabs/azure-deploy',
     join(__dirname, '../../../collection.json')
   );
 
