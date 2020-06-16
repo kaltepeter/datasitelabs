@@ -1,4 +1,6 @@
-# Ka
+# datasitelabs
+
+Open source monorepo for datasite.
 
 This project was generated using [Nx](https://nx.dev).
 
