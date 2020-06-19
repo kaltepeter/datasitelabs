@@ -5,7 +5,8 @@ import {
   mergeWith,
   move,
   Rule,
-  url
+  url,
+  Tree
 } from '@angular-devkit/schematics';
 import {
   addProjectToNxJsonInTree,
@@ -14,16 +15,17 @@ import {
   projectRootDir,
   ProjectType,
   toFileName,
-  updateWorkspace
+  updateWorkspace,
+  getProjectConfig
 } from '@nrwl/workspace';
-import { AzureDeploySchematicSchema } from './schema';
+import { AzureDeploy } from './schema';
 
 /**
  * Depending on your needs, you can change this to either `Library` or `Application`
  */
 const projectType = ProjectType.Library;
 
-interface NormalizedSchema extends AzureDeploySchematicSchema {
+interface NormalizedSchema extends AzureDeploy {
   projectName: string;
   projectRoot: string;
   projectDirectory: string;
@@ -31,7 +33,7 @@ interface NormalizedSchema extends AzureDeploySchematicSchema {
 }
 
 function normalizeOptions(
-  options: AzureDeploySchematicSchema
+  options: AzureDeploy
 ): NormalizedSchema {
   const name = toFileName(options.name);
   const projectDirectory = options.directory
@@ -65,9 +67,21 @@ function addFiles(options: NormalizedSchema): Rule {
   );
 }
 
-export default function(options: AzureDeploySchematicSchema): Rule {
+function check(options: AzureDeploy): Rule {
+  return (host: Tree) => {
+    const projectConfig = getProjectConfig(host, options.project);
+    if (projectConfig.architect.test) {
+      throw new Error(
+        `${options.project} already has a deploy architect option.`
+      );
+    }
+  };
+}
+
+export default function(options: AzureDeploy): Rule {
   const normalizedOptions = normalizeOptions(options);
   return chain([
+    check(options),
     updateWorkspace(workspace => {
       workspace.projects
         .add({
